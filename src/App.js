@@ -1,23 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
+import Laskuri from './laskuri';
+import Viesti from './viesti';
+import React, {useState} from 'react';
 
-function App() {
+const App = () => {
+
+  const [showLaskuri,setShowLaskuri] = useState(false)
+  const huomio = () =>{
+    alert("Achtung!")
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>hello from App!</h1>
+
+      <button onClick={()=>setShowLaskuri(!showLaskuri)}>{showLaskuri?"Piilota laskuri":"Näytä laskuri"}</button>
+      <br/>
+      {showLaskuri && <Laskuri huomio={huomio}/>}
+
+      <Viesti teksti="teksti kohta" otsikko="Viesti komponentti"/>
     </div>
   );
 }
