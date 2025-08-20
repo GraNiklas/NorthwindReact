@@ -7,6 +7,23 @@
   padding: 20px;
 }
 
+.customer-details {
+  text-align: center;
+  background-color:  #e6e7eb;
+  border: #282c34 2px solid;
+  width: 30%;
+  height: 100%;
+  border-radius: 2px;
+  margin: auto;
+  margin-bottom: 30px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.customer-div {
+  text-align: center;
+}
 .App {
   text-align: center;
 }

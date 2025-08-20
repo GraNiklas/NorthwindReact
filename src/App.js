@@ -4,6 +4,7 @@ import Laskuri from './laskuri';
 import Viesti from './viesti';
 import React, {useState} from 'react';
 import Posts from './posts';
+import CustomerList from './CustomerList';
 
 const App = () => {
 
@@ -16,6 +17,10 @@ const App = () => {
   return (
     <div className="App">
       <h1>hello from App!</h1>
+
+      <br/>
+      <CustomerList/>
+      <br/>
       <button onClick={()=>setShowPosts(!showPosts)}>{showPosts?"Piilota postaukset":"Näytä postaukset"}</button>
       <br/>
       {showPosts && <Posts/>} 
