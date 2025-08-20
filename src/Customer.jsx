@@ -14,7 +14,8 @@ const Customer = ({customer}) => {
          >{customer.companyName}</h2>
         <p>{customer.city} - {customer.country}</p>
         {showDetails && <div className='customer-details'>
-            <table>
+            <h3>{customer.companyName}</h3>
+            <table className='table'>
                 <thead>
                     <tr>
                         <th>Contact Name</th>

@@ -19,7 +19,40 @@
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
+.neg{
+  color:red;
+  background-color: lightgray;
+  font-size: 36px;
+  font-weight: bold;
+  border : 3px solid;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 10%;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}  
+.pos{
+  color:green;
+  background-color: lightgray;
+  font-size: 36px;
+  font-weight: bold;
+  border : 3px solid;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 10%;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+button{
+  border-radius: 4px;
+  margin: 10px;
+  font-size: 26px;
+  color:white;
+  background-color: darkgray;
+  padding: 10px;
+}
 
 .customer-div {
   text-align: center;
