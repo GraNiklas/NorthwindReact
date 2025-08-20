@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import customerService from './services/CustomerService';
-import Customer from './Customer';
+import CustomerService from './services/CustomerService';
 
 //props suoraan nimellä eikä props.huomio
 const CustomerAdd = ({ setLisäysTila, setIsPositive, setMessage, setShowMessage }) => {
@@ -30,7 +29,7 @@ const CustomerAdd = ({ setLisäysTila, setIsPositive, setMessage, setShowMessage
             phone: newPhone,
             fax: newFax
         };
-        customerService.create(newCustomer)
+        CustomerService.create(newCustomer)
             .then(responce => {
                 if (responce.status == 200)
                     setIsPositive(true);
@@ -39,6 +38,7 @@ const CustomerAdd = ({ setLisäysTila, setIsPositive, setMessage, setShowMessage
                     setLisäysTila(false);
                     setTimeout(() => {
                         setShowMessage(false);
+                        window.location.reload(); // reload the page to see the changes
                     }, 3000);
             })
             .catch(error => {

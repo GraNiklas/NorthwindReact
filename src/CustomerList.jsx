@@ -10,6 +10,7 @@ const CustomerList = ({setIsPositive,setMessage,setShowMessage}) => {
     const [customers,setCustomers] = useState([]);
     const [showCustomers,setShowCustomers] = useState(false);
     const [lisäysTila,setLisäysTila] = useState(false);
+    
 
     useEffect(()=>{
         customerService.getAll()
@@ -20,10 +21,11 @@ const CustomerList = ({setIsPositive,setMessage,setShowMessage}) => {
     <>
         <button onClick={()=>setShowCustomers(!showCustomers)}>{showCustomers?"Piilota asiakkaat":"Näytä asiakkaat"}</button>
         {!lisäysTila && <button className='button' onClick={()=>setLisäysTila(true)}>Add new</button>}
+        
         {lisäysTila && <CustomerAdd setLisäysTila={setLisäysTila} setIsPositive={setIsPositive} setMessage={setMessage} setShowMessage={setShowMessage}/>}
         {
             showCustomers && customers && customers.map(c => 
-                <Customer key={c.customerId}  customer = {c} />
+                <Customer key={c.customerId}  customer = {c} setIsPositive={setIsPositive} setMessage={setMessage} setShowMessage={setShowMessage} />
             )
         }
     </>
