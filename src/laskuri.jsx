@@ -1,7 +1,9 @@
 import React,{useState} from 'react';
 
-const Laskuri = (props) => {
+//props suoraan nimellä eikä props.huomio
+const Laskuri = ({huomio}) => {
 
+    //componentin tilan määritys
     const [luku,setLuku] = useState(0);
 
     return (
@@ -11,7 +13,7 @@ const Laskuri = (props) => {
         <button onClick={()=> setLuku(luku - 1)}>-</button>
         <button onClick={()=> setLuku(0)}>reset</button>
         <br/>
-        <button onClick={props.huomio}>huomio</button>
+        <button onClick={huomio}>huomio</button>
     </>
     
     );
