@@ -40,9 +40,10 @@ const App = () => {
             <Nav.Link href="/users">Users</Nav.Link>
             <Nav.Link href="/laskuri">Laskuri</Nav.Link>
           </Nav>
-
         </Navbar>
+
         {showMessage && <Message message={message} isPositive={isPositive}/>}
+        
         <Routes>
           <Route path='/customers' element={<CustomerList setMessage={setMessage} setIsPositive={setIsPositive} setShowMessage={setShowMessage}/>}/>
           <Route path='/users' element={<UserList setMessage={setMessage} setIsPositive={setIsPositive} setShowMessage={setShowMessage}/>}/>
