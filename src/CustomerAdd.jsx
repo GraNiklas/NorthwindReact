@@ -32,6 +32,8 @@ const CustomerAdd = ({ setLisäysTila, setIsPositive, setMessage, setShowMessage
         CustomerService.create(newCustomer)
             .then(responce => {
                 if (responce.status == 200)
+                {
+
                     setIsPositive(true);
                     setMessage("New customer added successfully: " + newCompanyName);
                     setShowMessage(true);
@@ -40,6 +42,7 @@ const CustomerAdd = ({ setLisäysTila, setIsPositive, setMessage, setShowMessage
                         setShowMessage(false);
                         window.location.reload(); // reload the page to see the changes
                     }, 3000);
+                }
             })
             .catch(error => {
                 setShowMessage(true);

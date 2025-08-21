@@ -32,6 +32,8 @@ const CustomerEdit = ({customer, setMuokkausTila, setIsPositive, setMessage, set
         CustomerService.update(newCustomer)
             .then(responce => {
                 if (responce.status == 200)
+                {
+
                     setIsPositive(true);
                     setMessage("Customer edited successfully: " + newCompanyName);
                     setShowMessage(true);
@@ -40,6 +42,7 @@ const CustomerEdit = ({customer, setMuokkausTila, setIsPositive, setMessage, set
                         setShowMessage(false);
                         window.location.reload(); // reload the page to see the changes
                     }, 3000);
+                }
             })
             .catch(error => {
                 setShowMessage(true);

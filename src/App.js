@@ -6,6 +6,13 @@ import React, {useState} from 'react';
 import Posts from './posts';
 import CustomerList from './CustomerList';
 import Message from './Message';
+import UserList from './UserList';
+
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 const App = () => {
 
@@ -22,22 +29,28 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>hello from App!</h1>
+      
+      <Router>
+        <Navbar bg="dark" variant='dark' expand="lg">
+          <Nav className='mr-auto'>
 
-      {showMessage && <Message message={message} isPositive={isPositive}/>}
+            <Nav.Link href="/customers">Customers</Nav.Link>
+            <Nav.Link href="/users">Users</Nav.Link>
+            <Nav.Link href="/posts">Posts</Nav.Link>
+            <Nav.Link href="/users">Users</Nav.Link>
+            <Nav.Link href="/laskuri">Laskuri</Nav.Link>
+          </Nav>
 
-      <br/>
-      <CustomerList setIsPositive={setIsPositive} setMessage={setMessage} setShowMessage={setShowMessage}/>
-      <br/>
-      <button onClick={()=>setShowPosts(!showPosts)}>{showPosts?"Piilota postaukset":"Näytä postaukset"}</button>
-      <br/>
-      {showPosts && <Posts/>} 
-      <br/>
-      <button onClick={()=>setShowLaskuri(!showLaskuri)}>{showLaskuri?"Piilota laskuri":"Näytä laskuri"}</button>
-      <br/>
-      {showLaskuri && <Laskuri huomio={huomio}/>}
-
-      <Viesti teksti="teksti kohta" otsikko="Viesti komponentti"/>
+        </Navbar>
+        {showMessage && <Message message={message} isPositive={isPositive}/>}
+        <Routes>
+          <Route path='/customers' element={<CustomerList setMessage={setMessage} setIsPositive={setIsPositive} setShowMessage={setShowMessage}/>}/>
+          <Route path='/users' element={<UserList setMessage={setMessage} setIsPositive={setIsPositive} setShowMessage={setShowMessage}/>}/>
+          <Route path='/posts' element={<Posts />} />
+          <Route path='/laskuri' element={<Laskuri huomio={huomio} />} />
+          <Route path='/users' element={<h2>Users page</h2>} />
+        </Routes>
+      </Router>
     </div>
   );
 }
