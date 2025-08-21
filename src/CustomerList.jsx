@@ -13,6 +13,8 @@ const CustomerList = ({ setIsPositive, setMessage, setShowMessage }) => {
     const [search, setSearch] = useState("");
 
     useEffect(() => {
+        const token = localStorage.getItem('token');
+        customerService.setToken(token);
         customerService.getAll()
             .then(data => setCustomers(data))
     }, [lisäysTila])

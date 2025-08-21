@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const baseUrl = "https://localhost:7270/api/customers";
+const baseUrl = "https://localhost:7270/api/products";
 
 let token = null
 
@@ -14,9 +14,9 @@ const getAll = () => {
     return request.then(response => response.data);
 }
 
-const create = (newCustomer) => {
+const create = (product) => {
     const config = { headers: { Authorization: token } }
-    return axios.post(baseUrl, newCustomer, config);
+    return axios.post(baseUrl, product, config);
 }
 
 const remove = (id) => {
@@ -24,9 +24,9 @@ const remove = (id) => {
     return axios.delete(`${baseUrl}/${id}`, config);
 }
 
-const update = (customer) => {
+const update = (product) => {
     const config = { headers: { Authorization: token } }
-    return axios.put(`${baseUrl}/${customer.customerId}`, customer, config);
+    return axios.put(`${baseUrl}/${product.productId}`, product, config);
 }
 
 export default { getAll, create, remove, update, setToken };

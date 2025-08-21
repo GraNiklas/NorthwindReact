@@ -14,6 +14,8 @@ const UserList = ({ setIsPositive, setMessage, setShowMessage }) => {
     const [search, setSearch] = useState("");
 
     useEffect(() => {
+        const token = localStorage.getItem('token');
+        userService.setToken(token);
         userService.getAll()
         .then(data => setUsers(data))
     }, [lisäysTila])
@@ -54,12 +56,15 @@ const UserList = ({ setIsPositive, setMessage, setShowMessage }) => {
         <>
         <h1>Users</h1>
             {muokkausTila && <UserEdit user={muokkausUser} setMuokkausTila={setMuokkausTila} setShowMessage={setShowMessage} setMessage={setMessage} setIsPositive={setIsPositive} />}
+            <br/>
 
             {!lisäysTila && <button className='btn btn-success' onClick={() => setLisäysTila(true)}>Lisää uusi</button>}
+            <br/>
             {lisäysTila && <UserAdd setLisäysTila={setLisäysTila} setShowMessage={setShowMessage} setMessage={setMessage} setIsPositive={setIsPositive}/>}
             <br/>
             <label>Search:</label>
             <input type='text' onChange={(value) => handleSearch(value)}></input>
+            <br/>
             
             <table className='table'>
                 <thead>
