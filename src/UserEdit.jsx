@@ -71,8 +71,8 @@ const UserEdit = ({user, setMuokkausTila, setIsPositive, setMessage, setShowMess
                 </div>
 
                 <div>
-                    <input type='submit' value='save' />
-                    <input type='button' value='back' onClick={() => setMuokkausTila(false)} />
+                    <input className='btn btn-success' type='submit' value='save' />
+                    <input className='btn btn-secondary' type='button' value='back' onClick={() => setMuokkausTila(false)} />
                 </div>
 
             </form>

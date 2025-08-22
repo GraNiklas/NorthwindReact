@@ -94,8 +94,8 @@ const ProductEdit = ({ product, setMuokkausTila, setIsPositive, setMessage, setS
                     <input type='text' placeholder='Discontinued'  onChange={({ target }) => setNewDiscontinued(target.value)} value={newDiscontinued}/>
                 </div>
                 <div>
-                    <input type='submit' value='save' />
-                    <input type='button' value='back' onClick={() => setMuokkausTila(false)} />
+                    <input className='btn btn-success' type='submit' value='save' />
+                    <input className='btn btn-secondary' type='button' value='back' onClick={() => setMuokkausTila(false)} />
                 </div>
 
             </form>

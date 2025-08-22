@@ -93,8 +93,8 @@ const CustomerEdit = ({customer, setMuokkausTila, setIsPositive, setMessage, set
                     <input type='text' placeholder='Fax' name='Fax' onChange={({ target }) => setNewFax(target.value)} value={newFax}/>
                 </div>
                 <div>
-                    <input type='submit' value='save' />
-                    <input type='button' value='back' onClick={() => setMuokkausTila(false)} />
+                    <input className='btn btn-success' type='submit' value='save' />
+                    <input className='btn btn-secondary' type='button' value='back' onClick={() => setMuokkausTila(false)} />
                 </div>
 
             </form>

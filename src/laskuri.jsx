@@ -8,12 +8,13 @@ const Laskuri = ({huomio}) => {
 
     return (
     <>
+        <h1>Laskuri</h1>
         <h3>{luku}</h3>
-        <button onClick={()=> setLuku(luku + 1)}>+</button>
-        <button onClick={()=> setLuku(luku - 1)}>-</button>
-        <button onClick={()=> setLuku(0)}>reset</button>
+        <button className='btn btn-secondary' onClick={()=> setLuku(luku + 1)}>+</button>
+        <button className='btn btn-secondary' onClick={()=> setLuku(luku - 1)}>-</button>
+        <button className='btn btn-secondary' onClick={()=> setLuku(0)}>reset</button>
         <br/>
-        <button onClick={huomio}>huomio</button>
+        <button className='btn btn-secondary' onClick={huomio}>huomio</button>
     </>
     
     );

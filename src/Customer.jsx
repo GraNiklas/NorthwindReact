@@ -65,12 +65,12 @@ const Customer = ({customer,setIsPositive,setMessage,setShowMessage}) => {
                     </tr>
                 </tbody>
             </table>
-            <button onClick={()=>deleteCustomer(customer)}>delete</button>
-            {!muokkausTila && <button className='button' onClick={()=>setMuokkausTila(true)}>Edit</button>}
-            {muokkausTila && <CustomerEdit customer={customer} setMuokkausTila={setMuokkausTila} setIsPositive={setIsPositive} setMessage={setMessage} setShowMessage={setShowMessage}/>}
+            <button className='btn btn-danger' onClick={()=>deleteCustomer(customer)}>delete</button>
+            {!muokkausTila && <button className='btn btn-warning' onClick={()=>setMuokkausTila(true)}>Edit</button>}
         </div>
         }
         
+        {muokkausTila && <CustomerEdit customer={customer} setMuokkausTila={setMuokkausTila} setIsPositive={setIsPositive} setMessage={setMessage} setShowMessage={setShowMessage}/>}
     </div>
     );
 }

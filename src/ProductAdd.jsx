@@ -94,8 +94,8 @@ const ProductAdd = ({ setLisäysTila, setIsPositive, setMessage, setShowMessage 
                     <input type='text' placeholder='Discontinued'  onChange={({ target }) => setNewDiscontinued(target.value)} />
                 </div>
                 <div>
-                    <input type='submit' value='save' />
-                    <input type='button' value='back' onClick={() => setLisäysTila(false)} />
+                    <input className='btn btn-success' type='submit' value='save' />
+                    <input className='btn btn-secondary' type='button' value='back' onClick={() => setLisäysTila(false)} />
                 </div>
 
             </form>

@@ -27,8 +27,9 @@ const ProductList = ({ setIsPositive, setMessage, setShowMessage }) => {
 
     return (
         <>
-            <button onClick={() => setShowProducts(!showProducts)}>{showProducts ? "Piilota tuotteet" : "Näytä tuotteet"}</button>
-            {!lisäysTila && <button className='button' onClick={() => setLisäysTila(true)}>Lisää uusi</button>}
+            <h1>Products</h1>
+            <button className='btn btn-secondary' onClick={() => setShowProducts(!showProducts)}>{showProducts ? "Piilota tuotteet" : "Näytä tuotteet"}</button>
+            {!lisäysTila && <button className='btn btn-success' onClick={() => setLisäysTila(true)}>Lisää uusi</button>}
             <br/>
             <label>Search:</label>
             <input type='text' onChange={(value) => handleSearch(value)}></input>

@@ -52,10 +52,11 @@ const App = () => {
       <Router>
         <Navbar bg="dark" variant='dark' expand="lg">
           <Nav className='mr-auto'>
-
+            <Navbar.Brand href="/">Northwind React.js</Navbar.Brand>
             <Nav.Link href="/customers">Customers</Nav.Link>
             <Nav.Link href="/products">Products</Nav.Link>
-            {accessLevel > 0 && <Nav.Link href="/users">Users</Nav.Link>} // toimii mutta jos käy editoimassa accessLevelin korkeammalle niin pitää kirjautua uudestaan ennen kun päivittää tiedon
+             {/* // toimii mutta jos käy editoimassa accessLevelin korkeammalle niin pitää kirjautua uudestaan ennen kun päivittää tiedon */}
+            {accessLevel > 0 && <Nav.Link href="/users">Users</Nav.Link>}
             <Nav.Link href="/posts">Posts</Nav.Link>
             {accessLevel > 1 &&  <Nav.Link href="/laskuri">Laskuri</Nav.Link>}
             <button className='btn btn-secondary' onClick={()=>LogOut()}>Logout</button>

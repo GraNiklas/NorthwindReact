@@ -27,10 +27,9 @@ const CustomerList = ({ setIsPositive, setMessage, setShowMessage }) => {
 
     return (
         <>
-          
-
-            <button onClick={() => setShowCustomers(!showCustomers)}>{showCustomers ? "Piilota asiakkaat" : "Näytä asiakkaat"}</button>
-            {!lisäysTila && <button className='button' onClick={() => setLisäysTila(true)}>Lisää uusi</button>}
+            <h1>Customers</h1>
+            <button className='btn btn-secondary' onClick={() => setShowCustomers(!showCustomers)}>{showCustomers ? "Piilota asiakkaat" : "Näytä asiakkaat"}</button>
+            {!lisäysTila && <button className='btn btn-success' onClick={() => setLisäysTila(true)}>Lisää uusi</button>}
             <br/>
             <label>Search:</label>
             <input type='text' onChange={(value) => handleSearch(value)}></input>

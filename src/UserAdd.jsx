@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState ,useEffect} from 'react';
 import UserService from './services/UserService';
 import md5 from 'md5';
 
@@ -9,6 +9,8 @@ const UserAdd = ({ setLisäysTila, setIsPositive, setMessage, setShowMessage }) 
     const [newLastName, setNewLastName] = useState('');
     const [newEmail, setNewEmail] = useState('');
     const [newPassword, setNewPassword] = useState('');
+    const [testPassword1, setTestPassword1] = useState('');
+    const [testPassword2, setTestPassword2] = useState('');
     const [newUserName, setNewUserName] = useState('');
     const [newAccesslevelId, setNewAccesslevelId] = useState(0);
 
@@ -45,6 +47,24 @@ const UserAdd = ({ setLisäysTila, setIsPositive, setMessage, setShowMessage }) 
             })
     }
 
+    useEffect(() => {
+        
+            verifyPassword(testPassword1, testPassword2);
+    })
+
+const verifyPassword = (pw1,pw2) => {
+    const pw = document.getElementById("pw");
+    if (pw2 === pw1 ) {
+        pw.innerText = "Passwords match!";
+        pw.classList.add('text-success');
+        pw.classList.remove('text-danger');
+        setNewPassword(pw1);
+    } else {
+        pw.innerText = "Passwords do not match!";
+        pw.classList.add('text-danger');
+        pw.classList.remove('text-success');
+    }
+}
 
     return (
         <div id='addNew'>
@@ -63,15 +83,19 @@ const UserAdd = ({ setLisäysTila, setIsPositive, setMessage, setShowMessage }) 
                     <input type='email' placeholder='Email' onChange={({ target }) => setNewEmail(target.value)} />
                 </div>
                 <div>
-                    <input type='password' placeholder='Password' required onChange={({ target }) => setNewPassword(target.value)} />
+                    <input type='password' placeholder='Password' required onChange={({ target }) => setTestPassword1(target.value)} />
                 </div>
+                <div>
+                    <input type='password' placeholder='Password' required onChange={({ target }) => setTestPassword2(target.value)} />
+                </div>
+                <p id="pw" className='text-danger'></p>
                 <div>
                     <input type='number' placeholder='Accesslevel id' required onChange={({ target }) => setNewAccesslevelId(target.value)} />
                 </div>
 
                 <div>
-                    <input type='submit' value='save' />
-                    <input type='button' value='back' onClick={() => setLisäysTila(false)} />
+                    <input className='btn btn-success' type='submit' value='save' />
+                    <input className='btn btn-secondary' type='button' value='back' onClick={() => setLisäysTila(false)} />
                 </div>
 
             </form>

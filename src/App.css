@@ -19,6 +19,9 @@
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+.btn{
+  margin: 4px;
+}
 .neg{
   color:red;
   background-color: lightgray;
@@ -33,7 +36,7 @@
   margin-right: auto;
 }  
 .pos{
-  color:lawngreen;
+  color:limegreen;
   background-color: lightgray;
   font-size: 36px;
   font-weight: bold;

@@ -77,13 +77,13 @@ const Product = ({product,setIsPositive,setMessage,setShowMessage}) => {
                             <img style={{height:"32px",width:"32px",objectFit: "cover" }} src={product.imageLink} alt={product.productName} />
                         </th>
                         <th>
-                        <button onClick={()=>deleteProduct(product)}>delete</button>
-                        {!muokkausTila && <button className='button' onClick={()=>setMuokkausTila(true)}>Edit</button>}
-                        {muokkausTila && <ProductEdit product={product} setMuokkausTila={setMuokkausTila} setIsPositive={setIsPositive} setMessage={setMessage} setShowMessage={setShowMessage}/>}
+                        <button className='btn btn-danger' onClick={()=>deleteProduct(product)}>delete</button>
+                        {!muokkausTila && <button className='btn btn-warning' onClick={()=>setMuokkausTila(true)}>Edit</button>}
                         </th>
                     </tr>
                 </tbody>
             </table>
+            {muokkausTila && <ProductEdit product={product} setMuokkausTila={setMuokkausTila} setIsPositive={setIsPositive} setMessage={setMessage} setShowMessage={setShowMessage}/>}
            
         </div>
         }

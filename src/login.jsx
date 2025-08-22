@@ -23,7 +23,7 @@ const Login = ({ setAccessLevel, setLoggedInUser, setIsPositive, setMessage, set
                     localStorage.setItem('username',response.data.username);
                     localStorage.setItem('accesslevelId',response.data.accessLevelId);
                     localStorage.setItem('token',response.data.token);
-                    
+
                     setAccessLevel(response.data.accessLevelId);
                     setLoggedInUser(response.data.username);
 
@@ -62,8 +62,8 @@ const Login = ({ setAccessLevel, setLoggedInUser, setIsPositive, setMessage, set
                     <input type='password' placeholder='Password' required onChange={({ target }) => setNewPassword(target.value)} />
 
                 
-                    <input type='submit' value='Login' />
-                    <input type='button' onClick={()=>emptyFields()} value='Empty' />
+                    <input className='btn btn-success' type='submit' value='Login' />
+                    <input className='btn btn-secondary' type='button' onClick={()=>emptyFields()} value='Empty' />
                 </div>
 
             </form>
