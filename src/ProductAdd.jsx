@@ -32,11 +32,11 @@ const ProductAdd = ({ setLisäysTila, setIsPositive, setMessage, setShowMessage 
         };
         ProductService.create(newProduct)
             .then(response => {
-                if (response.status == 200)
+                if (response.status == 200 || response.status == 201)
                 {
 
                     setIsPositive(true);
-                    setMessage("New customer added successfully: " + newProductName);
+                    setMessage("New product added successfully: " + newProductName);
                     setShowMessage(true);
                     setLisäysTila(false);
                     setTimeout(() => {
